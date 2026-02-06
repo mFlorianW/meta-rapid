@@ -1,0 +1,10 @@
+BBLAYERS ?= " \
+  ##OEROOT##/meta \
+  ##OEROOT##/../meta-yocto/meta-yocto-bsp \
+  ##OEROOT##/../meta-yocto/meta-poky \
+  ##OEROOT##/../meta-raspberrypi \
+  ##OEROOT##/../meta-oe/meta-oe \
+  ##OEROOT##/../meta-oe/meta-networking \
+  ##OEROOT##/../meta-oe/meta-python \
+  ##OEROOT##/../../../../layer/meta-rapid \
+  "
