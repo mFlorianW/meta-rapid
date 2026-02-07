@@ -7,7 +7,7 @@ inherit packagegroup
 RDEPENDS:${PN} = "  \
     lsof \
     picocom \
-    rapid-headless-init \
+    rapid-rusty-init \
     hostapd \
     dnsmasq \
     gpsd \
