@@ -3,7 +3,8 @@ SUMMARY = "A image that contains rapid and start it automatically, with packages
 require rapid-image.bb
 
 IMAGE_FEATURES += " \
-    debug-tweaks \
+    allow-empty-password \
+    allow-root-login \
     ssh-server-openssh \
     tools-debug \
 "
