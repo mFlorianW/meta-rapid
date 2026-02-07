@@ -6,5 +6,5 @@ BBLAYERS ?= " \
   ##OEROOT##/../meta-oe/meta-oe \
   ##OEROOT##/../meta-oe/meta-networking \
   ##OEROOT##/../meta-oe/meta-python \
-  ##OEROOT##/../../../../layer/meta-rapid \
+  ##OEROOT##/../meta-rapid \
   "
