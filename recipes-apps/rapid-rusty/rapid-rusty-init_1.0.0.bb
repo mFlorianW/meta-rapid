@@ -4,9 +4,9 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/MIT;md5=0835ad
 
 inherit systemd
 
-RDEPENDS:${PN} = "rapid"
+RDEPENDS:${PN} = "rapid-rusty"
 
-SRC_URI = "file://rapid-rusty.service"
+SRC_URI = "file://rapid-headless.service"
 SYSTEMD_SERVICE:${PN} = "rapid-headless.service"
 
 FILES:${PN} += "${systemd_unitdir}/system/rapid-headless.service"
