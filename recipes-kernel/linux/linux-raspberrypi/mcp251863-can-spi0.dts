@@ -1,0 +1,58 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835", "brcm,bcm2836", "brcm,bcm2837";
+
+    fragment@0 {
+        target = <&spi0>;
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <0>;
+            status = "okay";
+
+            spidev@0 {
+                status = "disabled";
+            };
+
+            mcp251863: mcp251863@0 {
+                compatible = "microchip,mcp251863";
+                reg = <0>;
+                spi-max-frequency = <20000000>;
+                clocks = <&mcp251863_osc>;
+                interrupt-parent = <&gpio>;
+                interrupts = <26 8>; /* GPIO25, IRQ_TYPE_LEVEL_LOW */
+                pinctrl-names = "default";
+                pinctrl-0 = <&mcp251863_pins>;
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            mcp251863_osc: mcp251863-osc {
+                compatible = "fixed-clock";
+                #clock-cells = <0>;
+                clock-frequency = <20000000>;
+            };
+        };
+    };
+
+    fragment@2 {
+        target = <&gpio>;
+        __overlay__ {
+            mcp251863_pins: mcp251863_pins {
+                brcm,pins = <26>;
+                brcm,function = <0>; /* GPIO_IN */
+                brcm,pull = <2>; /* enable pull-up */
+            };
+        };
+    };
+
+    __overrides__ {
+        oscillator = <&mcp251863_osc>,"clock-frequency:0";
+        speed = <&mcp251863>,"spi-max-frequency:0";
+        interrupt = <&mcp251863>,"interrupts:0";
+    };
+};
