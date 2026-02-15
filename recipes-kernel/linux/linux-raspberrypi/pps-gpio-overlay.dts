@@ -1,0 +1,17 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            pps: pps@0 {
+                compatible = "pps-gpio";
+                gpios = <&gpio 23 0>; /* GPIO23, active high */
+                status = "okay";
+            };
+        };
+    };
+};
