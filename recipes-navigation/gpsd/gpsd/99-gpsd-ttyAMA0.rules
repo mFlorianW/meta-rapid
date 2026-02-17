@@ -1,0 +1,1 @@
+KERNEL=="ttyAMA0", GROUP="gpsd", TAG+="systemd", ENV{SYSTEMD_WANTS}="gpsdctl@ttyAMA0.service"

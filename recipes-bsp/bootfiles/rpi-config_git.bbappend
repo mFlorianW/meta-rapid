@@ -1,9 +1,8 @@
-# Enable SPI and add MCP251863 CAN controller overlay
 do_deploy:append() {
-    # Enable SPI interface
+    echo "core_freq=250" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
+    echo "enable_uart=1" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
     echo "dtparam=spi=on" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
-
-    # Load MCP251863 CAN controller overlay
+    echo "dtoverlay=disable-bt" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
     echo "dtoverlay=mcp251863-can-spi0" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
     echo "dtoverlay=pps-gpio-overlay" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
 }

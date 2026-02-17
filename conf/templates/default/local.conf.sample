@@ -290,4 +290,3 @@ CONF_VERSION = "2"
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 
 SERIAL_CONSOLES = ""
-ENABLE_UART = "1"
