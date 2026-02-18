@@ -5,4 +5,5 @@ do_deploy:append() {
 
     # Load MCP251863 CAN controller overlay
     echo "dtoverlay=mcp251863-can-spi0" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
+    echo "dtoverlay=pps-gpio-overlay" >> ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
 }
