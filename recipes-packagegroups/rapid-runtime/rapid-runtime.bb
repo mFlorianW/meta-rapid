@@ -6,6 +6,7 @@ inherit packagegroup
 
 RDEPENDS:${PN} = " \
     rapid-rusty-init \
+    rapid-tracks \
     hostapd \
     dnsmasq \
     gpsd \
