@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/rapid_headless --gpsd
+Environment="ROCKET_ADDRESS=10.0.0.1"
 Restart=always
 RestartSec=5
 
