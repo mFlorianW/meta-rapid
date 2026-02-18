@@ -11,4 +11,5 @@ RDEPENDS:${PN} = " \
     gps-utils \
     pps-tools \
     vim \
+    util-linux \
 "
