@@ -9,3 +9,6 @@ IMAGE_FEATURES += " \
     tools-debug \
 "
 
+IMAGE_INSTALL:append = " \
+    rapid-develop-runtime \
+"
