@@ -12,4 +12,5 @@ RDEPENDS:${PN} = " \
     pps-tools \
     vim \
     util-linux \
+    chronyc \
 "

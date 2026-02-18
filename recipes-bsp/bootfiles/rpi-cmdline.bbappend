@@ -1,1 +1,1 @@
-CMDLINE:append = " systemd.getty_auto=no"
+CMDLINE:append = " systemd.getty_auto=no console=tty1"
