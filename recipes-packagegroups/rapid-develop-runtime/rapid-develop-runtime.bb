@@ -13,4 +13,5 @@ RDEPENDS:${PN} = " \
     vim \
     util-linux \
     chronyc \
+    htop \
 "
