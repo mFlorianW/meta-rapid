@@ -1,6 +1,7 @@
 [Unit]
 Description=Rapid Headless Timer Service
-After=network.target
+After=hostapd.service
+Wants=hostapd.service
 
 [Service]
 ExecStart=/usr/bin/rapid_headless --gpsd

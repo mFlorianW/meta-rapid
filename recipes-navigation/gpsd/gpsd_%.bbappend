@@ -6,6 +6,7 @@ SRC_URI += " \
     file://gpsd.default \
     file://98-ttyAMA0.rules \
     file://99-gpsd-ttyAMA0.rules \
+    file://gpsd.conf \
 "
 
 EXTRA_OESCONS:append = " \
@@ -24,4 +25,9 @@ do_install:append(){
     install -d ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${UNPACKDIR}/98-ttyAMA0.rules ${D}${sysconfdir}/udev/rules.d/
     install -m 0644 ${UNPACKDIR}/99-gpsd-ttyAMA0.rules ${D}${sysconfdir}/udev/rules.d/
+
+    install -d ${D}${systemd_unitdir}/system/gpsd.service.d
+    install -m 0644 ${UNPACKDIR}/gpsd.conf ${D}${systemd_unitdir}/system/gpsd.service.d/gpsd.conf
 }
+
+FILES:${PN} += "${systemd_system_unitdir}/gpsd.service.d/gpsd.conf"

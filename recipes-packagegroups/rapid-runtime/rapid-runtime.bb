@@ -11,4 +11,5 @@ RDEPENDS:${PN} = " \
     dnsmasq \
     gpsd \
     iproute2 \
+    chrony \
 "
