@@ -2,12 +2,13 @@ SUMMARY = "Rapid Headless  Service"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-inherit systemd
+inherit systemd allarch
 
 RDEPENDS:${PN} = "rapid-rusty"
 
 SRC_URI = "file://rapid-headless.service"
 SYSTEMD_SERVICE:${PN} = "rapid-headless.service"
+S = "${UNPACKDIR}"
 
 FILES:${PN} += "${systemd_unitdir}/system/rapid-headless.service"
 
