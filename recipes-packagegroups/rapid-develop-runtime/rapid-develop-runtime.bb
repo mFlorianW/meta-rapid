@@ -14,4 +14,5 @@ RDEPENDS:${PN} = " \
     util-linux \
     chronyc \
     htop \
+    can-utils \
 "
