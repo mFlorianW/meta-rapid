@@ -21,7 +21,7 @@
                 spi-max-frequency = <20000000>;
                 clocks = <&mcp251863_osc>;
                 interrupt-parent = <&gpio>;
-                interrupts = <26 8>; /* GPIO25, IRQ_TYPE_LEVEL_LOW */
+                interrupts = <16 8>; /* GPIO16, IRQ_TYPE_LEVEL_LOW */
                 pinctrl-names = "default";
                 pinctrl-0 = <&mcp251863_pins>;
             };
@@ -43,7 +43,7 @@
         target = <&gpio>;
         __overlay__ {
             mcp251863_pins: mcp251863_pins {
-                brcm,pins = <26>;
+                brcm,pins = <16>;
                 brcm,function = <0>; /* GPIO_IN */
                 brcm,pull = <2>; /* enable pull-up */
             };
